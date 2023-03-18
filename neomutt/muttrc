@@ -1,0 +1,26 @@
+# vim: filetype=muttrc
+
+# Hooks
+# ----------------------------------------
+
+# startup-hook 'echo `mailsyncd &` exec sync-mailbox'
+# timeout-hook 'echo ` &` exec sync-mailbox'
+shutdown-hook 'exec sync-mailbox'
+
+# Core config
+# ----------------------------------------
+
+source ~/.config/neomutt/core/settings
+source ~/.config/neomutt/core/mappings
+source ~/.config/neomutt/core/colors
+
+# Accounts
+# ----------------------------------------
+
+folder-hook '~/.mail/gmail' 'source ~/.config/neomutt/accounts/gmail.conf'
+folder-hook '~/.mail/uu'    'source ~/.config/neomutt/accounts/uu.conf'
+
+# Default account
+# ----------------------------------------
+
+source ~/.config/neomutt/accounts/uu.conf

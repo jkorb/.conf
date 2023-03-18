@@ -1,0 +1,88 @@
+# vim: filetype=muttrc
+
+# Mono colors
+# ----------------------------------------
+
+mono  bold           bold
+mono  underline      underline
+mono  indicator      reverse
+mono  error          bold
+
+# Basic colors
+# ----------------------------------------
+
+color error         red             default
+color attachment    black           default
+color normal        default         default
+color tilde         black           default
+color message       yellow          default
+color markers       red             white
+color search        brightmagenta   default
+color status        blue            default
+color signature     brightyellow    default
+
+color bold          black           default
+color underline     black           default
+
+
+
+color quoted    green       default
+color quoted1   blue        default
+color quoted2   cyan        default
+color quoted3   yellow      default
+color quoted4   red         default
+color quoted5   brightred   default
+
+# Index
+# ----------------------------------------
+
+color index     white       default '.*'
+
+color index     red         default ~D #deleted
+# color index     magenta     default ~F #forwarded
+color index     brightblue  default ~U #unread 
+color index     green       default ~Q #replied
+color index     yellow      default ~T #tagged
+
+color indicator default     brightblack      # Currently selected message
+
+# Sidebar
+# ----------------------------------------
+
+color sidebar_highlight default     brightblack
+color sidebar_indicator blue        default
+color sidebar_spoolfile default     default
+color sidebar_new       default     default
+color sidebar_flagged   default     default
+color sidebar_ordinary  default     default
+color sidebar_divider   default     default
+
+# Header
+# ----------------------------------------
+
+set   header_color_partial              #color applies to exact match 
+
+color hdrdefault    yellow        default
+color header        green         default "^(Date:|To:|From:|CC:|BCC:|Subject:|User-Agent:)"
+
+# Body
+# ----------------------------------------
+
+color body green        default    "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
+color body green       default    "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
+color body green       default    "\`[^\`]*\`" # Green text between ` and `
+color body blue        default    "^# \.*" # Headings as bold blue
+color body brightcyan  default    "^## \.*" # Subheadings as bold cyan
+color body brightgreen default    "^### \.*" # Subsubheadings as bold green
+color body brightcyan  default    "[;:][-o][)/(|]" # emoticons
+color body brightcyan  default    "[;:][)(|]" # emoticons
+color body brightcyan  default    "[ ][*][^*]*[*][ ]?" # more emoticon?
+color body brightcyan  default    "[ ]?[*][^*]*[*][ ]" # more emoticon?
+color body blue        default    "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
+
+# color body red default "(BAD signature)"
+# color body cyan default "(Good signature)"
+# color body brightblack default "^gpg: Good signature .*"
+# color body brightyellow default "^gpg: "
+# color body brightyellow red "^gpg: BAD signature from.*"
+# mono body bold "^gpg: Good signature"

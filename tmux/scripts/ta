@@ -1,0 +1,27 @@
+#!/bin/zsh
+
+Dir="${1:-$PWD}"
+
+SessionsDir="$XDG_CONFIG_HOME/tmux/sessions/$HOST"
+
+SessionName="${${Dir/$HOME}:-home}"
+SessionName="${SessionName//[. ]/_}"
+SessionName="${SessionName/\//}"
+
+SessionConfig="$SessionsDir/${SessionName//\//%}.yaml"
+
+if [[ ! -f $SessionConfig ]]; then
+    cat <<EOF >> $SessionConfig
+session_name: $SessionName
+environment:
+  TMUXP_SESSION_HOME: "$Dir"
+  TMUXP_SESSION_CONFIG: "$SessionConfig"
+windows:
+- focus: 'true'
+  panes:
+  - pane
+  start_directory: $Dir
+EOF
+fi
+
+tmuxp load -y $SessionConfig

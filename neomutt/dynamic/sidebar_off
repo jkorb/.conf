@@ -1,0 +1,3 @@
+# vim: filetype=muttrc
+
+source ~/.config/neomutt/core/mappings

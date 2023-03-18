@@ -1,0 +1,24 @@
+# vim: filetype=muttrc
+
+# Clear bindings ...
+# ----------------------------------------
+
+unbind *
+
+# Sidebar bindings ...
+# ----------------------------------------
+
+# bind index,pager   <Return> sidebar-open
+macro index,pager <Return>     "<sidebar-open><enter-command>toggle sidebar_visible<enter><enter-command>source '~/.config/neomutt/dynamic/sidebar_off'<enter>" "toggle sidebar"
+
+bind index,pager   j        sidebar-next
+bind index,pager   k        sidebar-prev
+
+bind index,pager   gg       sidebar-first
+bind index,pager   G        sidebar-last
+
+# Toggle binding ...
+# ----------------------------------------
+
+macro index,pager <Tab>     "<enter-command>toggle sidebar_visible<enter><enter-command>source '~/.config/neomutt/dynamic/sidebar_off'<enter>" "toggle sidebar"
+macro index,pager q         "<enter-command>toggle sidebar_visible<enter><enter-command>source '~/.config/neomutt/dynamic/sidebar_off'<enter>" "toggle sidebar"

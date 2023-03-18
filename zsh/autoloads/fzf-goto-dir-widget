@@ -1,0 +1,20 @@
+# autoload
+
+fzf-goto-dir-widget () {
+  local cmd="command fd -uu --ignore-file $ZDOTDIR/plugins/fzf/fdignore -L --strip-cwd-prefix --one-file-system -t d -p --base-directory $HOME ."
+  setopt localoptions pipefail no_aliases 2> /dev/null
+  local dir="$(eval "$cmd" | fzf -i --algo=v1 +m --cycle --height=40% --preview 'tree -C $HOME/{} | head -200' --reverse --history=$XDG_CACHE_DIR/fzf/dir_history --history-size=1000000000)"
+  if [[ -z "$dir" ]]; then
+    zle redisplay
+    return 0
+  fi
+  zle push-line # Clear buffer. Auto-restored on next prompt.
+  BUFFER="cd -- $HOME/${(q)dir}"
+  zle accept-line
+  local ret=$?
+  unset dir # ensure this doesn't end up appearing in prompt expansion
+  zle reset-prompt
+  return $ret
+}
+
+fzf-goto-dir-widget

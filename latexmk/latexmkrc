@@ -1,0 +1,7 @@
+$pdf_previewer = "zathura %O %S";
+$pdf_mode = 1;        # tex -> pdf
+$latex = "latex -synctex=1  -halt-on-error %O %S";
+$pdflatex = "pdflatex -synctex=1  -halt-on-error %O %S";
+$bibtex_use = 2;
+$sleep_time = 1;
+$clean_ext = " run.xml .nav .snm";

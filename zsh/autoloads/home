@@ -1,0 +1,7 @@
+# autoload
+
+home () {
+  cd -- "$TMUXP_SESSION_HOME"
+}
+
+home

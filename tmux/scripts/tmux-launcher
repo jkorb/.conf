@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+alacritty -t "Tmux client" -e zsh -c "ta"

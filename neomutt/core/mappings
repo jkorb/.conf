@@ -1,0 +1,137 @@
+# vim: filetype=muttrc
+
+# Clear bindings ...
+# ----------------------------------------
+
+unbind *
+unbind * \CB # No idea why this remains bound
+
+# Reload config ...
+# ----------------------------------------
+
+macro generic,index,pager         <Space>r "<enter-command>source ~/.config/neomutt/muttrc <enter>" "Reload config"
+
+# Exiting
+# ----------------------------------------
+
+macro  generic,index,pager        q '<sync-mailbox><exit>'
+
+# # Movements
+# # ----------------------------------------
+
+bind index,attach,compose,browser j   next-entry
+bind index,attach,compose,browser k   previous-entry
+
+bind generic,pager                j   next-line 
+bind generic,pager                k   previous-line 
+
+bind generic,index,pager,browser  \Cd half-down
+bind generic,index,pager,browser  \Cu half-up
+
+# Viewing
+# ----------------------------------------
+
+bind  index      l        display-message
+bind  attach     l        view-mailcap
+bind  pager      A        view-attachments
+bind  index      <Return> display-message
+bind  attach     <Return> view-mailcap
+
+# Searching
+# ----------------------------------------
+
+bind generic,index,pager /  search
+bind index,pager         N  search-opposite
+bind index               L  limit
+
+# Folding
+# ----------------------------------------
+
+bind generic             zt         current-top
+bind generic             zz         current-middle
+bind generic             zb         current-bottom
+
+bind index               za         collapse-thread
+bind index               zA         collapse-all
+
+# Go
+# ----------------------------------------
+
+bind generic             gg         first-entry
+bind generic,index       G          last-entry
+bind pager               gg         top
+bind pager               G          bottom
+
+macro index,pager        gf         "<change-folder>?"                                                              "open ..."
+macro index,pager        gi         "<change-folder>!<enter>"                                                       "open inbox"
+macro index,pager        /          "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mail/search "  "mu find"
+macro index,pager        gs         "<change-folder-readonly>~/.mail/search\n"                                      "mu find results"
+# macro index,pager        gs         "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mail/search "  "mu find"
+# macro index,pager        gS         "<change-folder-readonly>~/.mail/search\n"                                      "mu find results"
+macro index,pager        gr         "<shell-escape> mailsync & <enter><sync-mailbox>"         "sync all mailboxes"
+# macro index,pager        gr         "<shell-escape> ~/.config/neomutt/scripts/sync & <enter><sync-mailbox>"         "sync all mailboxes"
+
+# Moving things around
+# ----------------------------------------
+
+bind index               ss         save-message
+
+# Attachment 
+# ----------------------------------------
+
+bind attach              s          save-entry
+
+
+# Composing
+# ----------------------------------------
+
+bind  index,pager        cc         mail               
+bind  index,pager        cr         reply             
+bind  index,pager        cf         forward-message
+bind  index,pager        ca         group-reply
+bind  index,pager        c@         compose-to-sender
+
+bind  compose            cc         send-message
+bind  compose            ce         edit-message 
+bind  compose            ca         attach-file
+bind  compose            dd         detach-file
+
+# Tagging
+# ----------------------------------------
+
+bind  generic            <space><space>  tag-entry
+bind  index              <space>t        tag-thread
+macro pager              <space>t        "<exit><mark-message>q<enter><tag-thread>'q<display-message>"    "tag-thread"
+bind  index,pager        <space><space>  tag-message
+
+# Mouse
+# ----------------------------------------
+
+bind index               \031      previous-entry	# Mouse wheel
+bind index               \005      next-entry		# Mouse wheel
+
+bind pager               \031      previous-line	# Mouse wheel
+bind pager               \005      next-line		# Mouse wheel
+
+# macro index              sat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015'q<untag-pattern>.\\015\"\015<mark-message>q<enter><untag-pattern>.<enter><tag-thread><tag-prefix-cond><save-message>?"     "save thread to a mailbox"
+# macro index              \;s ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<tag-prefix-cond><save-message>?"                                                                                     "save tagged messages to a mailbox"
+# macro index              \;c ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<tag-prefix-cond><copy-message>?"                                                                                     "copy tagged messages to a mailbox"
+
+# Deleting
+# ----------------------------------------
+
+macro index,pager        dat "<delete-thread><sync-mailbox>"                  "move thread to trash"
+macro index              dd  "<tag-prefix><delete-message><sync-mailbox>"     "delete current/tagged message(s)"
+bind  index,pager        D   purge-message
+bind  index              du  undelete-message
+
+# Sidebar
+# ----------------------------------------
+
+macro index,pager          <Tab>  "<enter-command>toggle sidebar_visible<enter><enter-command>source '~/.config/neomutt/dynamic/sidebar_on'<enter>" "toggle sidebar"
+
+# macro index,pager        ss  ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<save-message>?"                                                                                                                                     "save message to a mailbox"
+# macro pager              sat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015<display-message>\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015'q<untag-pattern>.\\015<display-message>\"\015<exit><mark-message>q<enter><untag-pattern>.<enter><tag-thread><tag-prefix><save-message>?" "save thread to a mailbox"
+
+# bind  editor            <Tab> complete-query
+# bind  editor             ^T   complete

@@ -1,0 +1,125 @@
+# vim: filetype=muttrc
+
+# Directories
+# ----------------------------------------
+set   mbox_type           = Maildir
+
+set   folder              = $HOME/.mail/
+
+set   mailcap_path        = "~/.config/neomutt/core/mailcap"
+set   header_cache        = "~/.cache/neomutt"
+set   message_cachedir    = "~/.cache/neomutt"
+# set   tmpdir              = "~/.cache/mutt" # where to keep temp files
+
+set   attach_save_dir     = "~/Downloads"
+
+# Mailboxes 
+# ----------------------------------------
+
+# named-mailboxes gmail/inbox   '+gmail/Inbox'
+# named-mailboxes gmail/archive '+gmail/[Google Mail]/All Mail'
+# named-mailboxes gmail/sent    '+gmail/[Google Mail]/Sent Mail'
+# named-mailboxes gmail/drafts  '+gmail/[Google Mail]/Drafts'
+# named-mailboxes gmail/trash   '+gmail/[Google Mail]/Trash'
+# named-mailboxes gmail/spam    '+gmail/[Google Mail]/Spam'
+
+named-mailboxes uu/inbox      '+uu/INBOX'          
+named-mailboxes uu/archive    '+uu/Archive' 
+named-mailboxes uu/sent       '+uu/Sent'    
+named-mailboxes uu/drafts     '+uu/Drafts' 
+named-mailboxes uu/trash      '+uu/Trash'
+named-mailboxes uu/junk       '+uu/Junk'
+
+# Backend settings
+# ----------------------------------------
+set   ispell              = "/usr/bin/hunspell"
+set   editor="nvim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
+
+
+# Viewing 
+# ----------------------------------------
+
+auto_view         text/html
+alternative_order text/plain text/html
+
+# Composing
+# ----------------------------------------
+
+set   fcc_attach                               # save attachments with the body
+set   edit_headers                             # show headers when composing
+set   forward_format      = "Fwd: %s"          # format of subject when forwarding
+set   attribution         = "On %d, %n wrote:" # format of quoting header
+
+set   reverse_name                             # reply as whomever it was to
+set   forward_decode                           # decode when forwarding
+set   fast_reply                               # skip to compose when replying
+set   reply_to                                 # reply to Reply to: field
+set   include                                  # include message in replies
+set   forward_quote                            # include message in forwards
+
+unset mime_forward                   # forward attachments as part of body
+
+
+# Main options
+# ----------------------------------------
+set   text_flowed
+set   sig_dashes                       
+set   autoedit=yes
+set   delete=yes
+set   sleep_time = 0
+set   timeout    = 300
+set   menu_scroll
+set   quit                     
+set   pipe_decode               
+set   thorough_search            
+
+
+unset beep_new                    
+unset help                         
+# unset resolve
+unset confirmappend                
+unset mark_old                      
+unset wait_key
+
+
+# Formatting 
+# ----------------------------------------
+
+set   date_format         = "%d.%m.%Y %H:%M"
+set   status_format       = "%f ──%r%m messages%?n? (%u unread)?%>─"
+set   index_format        = "%<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]>  %-15.15F  %s"
+set   pager_format        = "%-15.15F (%D): %-25.25s... %* %P"
+set   compose_format      = "Size: %l, %a attachments%>─"
+
+# Index
+set   arrow_cursor        = "no"                                              # Change `color indicator` depending 
+
+set   sort                = threads
+set   sort_aux            = reverse-last-date-received
+set   sort_re
+
+set   uncollapse_jump
+set   reply_regexp        = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set   quote_regexp        = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set   send_charset        = "utf-8:iso-8859-1:us-ascii"
+set   charset             = "utf-8"
+
+# Pager settings
+# ----------------------------------------
+
+set   pager_index_lines = 10  # Shows 10 lines of index when pager is active
+set   pager_context     = 3
+set   pager_stop
+set   tilde
+set   smart_wrap
+
+unset markers
+
+# Sidebar
+# ----------------------------------------
+
+set mail_check_stats
+set sidebar_visible      = no
+set sidebar_width        = 20
+set sidebar_divider_char = ""
+set sidebar_format       = "%D %?N?(%N)?"

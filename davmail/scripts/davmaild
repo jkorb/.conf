@@ -1,0 +1,51 @@
+#!/usr/bin/env zsh
+
+Arg=$1
+
+ServerConfig="${XDG_CONFIG_HOME}/davmail/davmail.properties"
+
+DaemonPattern="zsh.+\/davmaild"
+DavmailPattern="java.+\/davmail.jar"
+
+DaemonInstances=($(pgrep -f "${DaemonPattern}"))
+DavmailInstances=($(pgrep -f "${DavmailPattern}"))
+
+if [[ $Arg == "kill" || $Arg == "restart" ]]; then
+    for id in "$DavmailInstances"; do
+        kill $id
+    done
+    for id in $DaemonInstances; do
+        if [[ $id -ne $$ ]]; then
+            kill $id
+        fi
+    done
+    if [[ ! $Arg == "restart" ]]; then
+        exit 0
+    fi
+fi
+
+# There can only be one
+if [[ ${#DaemonInstances} -gt 1 ]]; then
+    echo "Already running!"
+    exit 0
+fi
+
+if [[ -n ${#DavmailInstances} ]]; then
+    for id in $DavmailInstances; do
+        kill $id
+    done
+fi
+
+# Main loop
+
+until davmail $ServerConfig; do
+    echo "> Respawning.." >&2
+    # Just to be sure not to overgenerate servers
+    RunningInstances=($(pgrep -f "$DavmailPattern"))
+    for id in "${RunningInstances[@]}"; do
+        kill $id
+    done
+    sleep 1
+done
+
+exit 0

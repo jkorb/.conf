@@ -1,0 +1,14 @@
+# autoload
+
+save () {
+  tmuxp freeze -q -y -o $TMUXP_SESSION_CONFIG
+
+  cat <<EOF >> $TMUXP_SESSION_CONFIG
+environment:
+  TMUXP_SESSION_HOME: "$TMUXP_SESSION_HOME"
+  TMUXP_SESSION_CONFIG: "$TMUXP_SESSION_CONFIG"
+EOF
+
+}
+
+save

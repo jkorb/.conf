@@ -1,0 +1,4 @@
+zinit/
+.zcompdump
+.zcompcache/
+.zsh_sessions/
