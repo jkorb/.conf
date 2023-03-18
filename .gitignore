@@ -15,6 +15,7 @@
 !zsh
 
 !isyncrc
+!README.md
 !.gitignore
 
 !*/
