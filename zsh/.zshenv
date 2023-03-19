@@ -26,6 +26,12 @@ if uname | grep -q Darwin &> /dev/null; then
   path+=("/opt/homebrew/bin" "/opt/homebrew/sbin")
 fi
 
+if uname | grep -q Darwin &> /dev/null; then
+  alias alacritty="alacritty --config-file=$XDG_CONFIG_HOME/alacritty/alacritty_macOS.yml"
+else
+  alias alacritty="alacritty --config-file=$XDG_CONFIG_HOME/alacritty/alacritty_arch.yml"
+fi
+
 scripts=('tmux' 'neomutt' 'davmail' 'khal' 'vdirsyncer' 'statnot')
 
 for i in "${scripts[@]}"; do

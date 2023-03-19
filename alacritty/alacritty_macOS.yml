@@ -9,7 +9,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: FiraCode
+    family: FiraCode Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -20,7 +20,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode
+    family: FiraCode Nerd Font
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
@@ -32,7 +32,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode
+    family: FiraCode Nerd Font
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
@@ -44,23 +44,25 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode
+    family: FiraCode Nerd Font
     #family: monospace
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 10
+  size: 16
 
 key_bindings:
   - { key: Slash,   mods: Control,       chars: "\x1f"                 }
 
 window:
   opacity: 0.8
+  decorations: buttonless
 
 import:
- - $XDG_DATA_HOME/alacritty/alacritty-theme/themes/one_dark.yaml
+ - ~/.local/share/alacritty/alacritty-theme/themes/one_dark.yaml
+
 
 colors:
   # ...
