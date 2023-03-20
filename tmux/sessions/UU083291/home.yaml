@@ -1,0 +1,20 @@
+session_name: home
+environment:
+  TMUXP_SESSION_HOME: "/Users/Korbm001"
+  TMUXP_SESSION_CONFIG: "/Users/Korbm001/.config/tmux/sessions/UU083291/home.yaml"
+windows:
+- focus: 'true'
+  window_name: home
+  panes:
+  - shell_command:
+  start_directory: /Users/Korbm001
+- focus: 'true'
+  window_name: mail
+  panes:
+  - shell_command: mail
+  start_directory: /Users/Korbm001
+- focus: 'true'
+  window_name: calendar
+  panes:
+  - shell_command: calendar
+  start_directory: /Users/Korbm001
