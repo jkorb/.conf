@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-Pattern="zsh $XDG_CONFIG_HOME/neomutt/scripts/mailsyncd"
+Pattern="zsh $XDG_CONFIG_HOME/neomutt/scripts/msyncd"
 
 RunningInstances=($(pgrep -f "$Pattern"))
 
