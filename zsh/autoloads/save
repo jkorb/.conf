@@ -9,6 +9,16 @@ environment:
   TMUXP_SESSION_CONFIG: "$TMUXP_SESSION_CONFIG"
 EOF
 
+  # GitPath="${${TMUXP_SESSION_CONFIG/$XDG_CONFIG_HOME/}/\/}"
+
+  # if git -C $XDG_CONFIG_HOME status --porcelain | grep -q $GitPath; then
+
+  #   git -C $XDG_CONFIG_HOME reset
+  #   git -C $XDG_CONFIG_HOME add $GitPath
+  #   git -C $XDG_CONFIG_HOME commit -m "Update $GitPath"
+
+  # fi
+
 }
 
 save
