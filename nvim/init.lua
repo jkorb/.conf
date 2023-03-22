@@ -64,12 +64,12 @@ require('packer').startup(function(use)
   }
 
   use { -- Make things transparent
-    'xiyaowong/nvim-transparent',
-    config = function()
-      require("transparent").setup({
-        enable = true, -- boolean: enable transparent
-      })
-    end
+    'xiyaowong/transparent.nvim',
+    -- config = function()
+    --   require("transparent").setup({
+    --     enable = true, -- boolean: enable transparent
+    --   })
+    -- end
   }
 
   use { -- Nice tab bar
