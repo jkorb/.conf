@@ -3,7 +3,7 @@ Host localhost
 Port 1143
 AuthMechs LOGIN
 PassCmd "pass show uu | sed -n '1p'" 
-SSLType None
+TSLType None
 User j.korbmacher@uu.nl
 Timeout 0
 
@@ -31,7 +31,6 @@ Expunge Both
 SyncState *
 
 # Use SSL
-SSLType IMAPS
 # The following line should work. If you get certificate errors, uncomment the two following lines and read the "Troubleshooting" section.
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 # CertificateFile ~/.cert/imap.gmail.com.pem
