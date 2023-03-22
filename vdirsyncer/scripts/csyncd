@@ -1,13 +1,14 @@
 #!/usr/bin/env zsh
 
-Pattern="zsh /home/jkorbmacher/.local/bin/csyncd"
+Pattern="zsh $HOME/.local/bin/csyncd"
 
-RunningInstances=($(pgrep -f -c "$Pattern"))
+RunningInstances=($(pgrep -f "$Pattern" | wc -l))
 
 if [[ ${#RunningInstances} -gt 1 ]]; then
     echo "Already running!"
     exit 0
 fi
+
 
 DavmaildPattern="zsh $XDG_CONFIG_HOME/davmail/scripts/davmaild"
 KhalPattern="python.+\/khal interactive"
