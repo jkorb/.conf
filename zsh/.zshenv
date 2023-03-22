@@ -35,7 +35,7 @@ fi
 scripts=('tmux' 'neomutt' 'davmail' 'khal' 'vdirsyncer' 'statnot')
 
 for i in "${scripts[@]}"; do
-  [[ -d $XDG_CONFIG_HOME/$i/scripts ]] && path+=("$XDG_CONFIG_HOME/$i/scripts")
+  [[ -d $XDG_CONFIG_HOME/$i/scripts ]] && path=("$XDG_CONFIG_HOME/$i/scripts" "${path[@]}")
 done
 
 export BROWSER='brave-launcher'
