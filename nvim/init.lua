@@ -674,9 +674,9 @@ require('packer').startup(function(use)
 
   use { 'vigoux/ltex-ls.nvim', requires = 'neovim/nvim-lspconfig' }
 
-  use { '~/.local/share/nvim/my_plugins/cmp_email.nvim' }
+  use { 'jkorb/cmp_email.nvim' }
 
-  use { '~/.local/share/nvim/my_plugins/email.nvim' }
+  use { 'jkorb/email.nvim' }
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
