@@ -3,7 +3,7 @@ Host localhost
 Port 1143
 AuthMechs LOGIN
 PassCmd "pass show uu | sed -n '1p'" 
-TLSType None
+SSLType None
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 User j.korbmacher@uu.nl
 Timeout 0
