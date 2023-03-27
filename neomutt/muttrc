@@ -17,7 +17,7 @@ source ~/.config/neomutt/core/colors
 # Accounts
 # ----------------------------------------
 
-folder-hook '~/.mail/gmail' 'source ~/.config/neomutt/accounts/gmail.conf'
+# folder-hook '~/.mail/gmail' 'source ~/.config/neomutt/accounts/gmail.conf'
 folder-hook '~/.mail/uu'    'source ~/.config/neomutt/accounts/uu.conf'
 
 # Default account

@@ -29,6 +29,7 @@ named-mailboxes uu/sent       '+uu/Sent'
 named-mailboxes uu/drafts     '+uu/Drafts' 
 named-mailboxes uu/trash      '+uu/Trash'
 named-mailboxes uu/junk       '+uu/Junk'
+named-mailboxes recent-search '+recent-search'
 
 # Backend settings
 # ----------------------------------------
