@@ -501,8 +501,8 @@ require('packer').startup(function(use)
             formatterLineLength = 80,
           }
         },
-        lua_ls = {
-        },
+        -- lua_ls = {
+        -- },
       }
 
 
