@@ -24,6 +24,7 @@ fi
 
 if uname | grep -q Darwin &> /dev/null; then
   path+=("/opt/homebrew/bin" "/opt/homebrew/sbin")
+  path+=("/Library/Tex/texbin")
 fi
 
 if uname | grep -q Darwin &> /dev/null; then
