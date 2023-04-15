@@ -1,7 +1,11 @@
 # autoload
 
 home () {
-  cd -- "$TMUXP_SESSION_HOME"
+
+  DIR="${TMUXP_SESSION_HOME:-$HOME}"
+
+  cd -- "$DIR"
+
 }
 
 home

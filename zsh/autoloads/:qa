@@ -1,0 +1,13 @@
+# autoload
+
+:qa () {
+
+  if [[ -n $TMUX ]]; then
+    tmux confirm-before kill-session
+  else
+    :q
+  fi
+
+}
+
+:qa

@@ -1,0 +1,11 @@
+# autoload
+
+:wqa () {
+
+  :w
+
+  :qa
+
+}
+
+:wqa

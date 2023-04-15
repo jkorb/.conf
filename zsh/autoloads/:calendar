@@ -1,0 +1,9 @@
+# autoload
+
+:calendar () {
+
+  tmux display-popup -E calendar
+
+}
+
+:calendar

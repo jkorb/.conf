@@ -1,0 +1,32 @@
+# autoload
+
+:w () {
+
+  if [[ ! validate-session ]]; then
+    >&2 echo "Session config file not set."
+    return 1
+  fi
+
+  cp $TMUXP_SESSION_CONFIG ${TMUXP_SESSION_CONFIG}_$(date +%s)
+
+  tmuxp freeze -q -y -o $TMUXP_SESSION_CONFIG
+
+  cat <<EOF >> $TMUXP_SESSION_CONFIG
+environment:
+  TMUXP_SESSION_HOME: "$TMUXP_SESSION_HOME"
+  TMUXP_SESSION_CONFIG: "$TMUXP_SESSION_CONFIG"
+EOF
+
+  # GitPath="${${TMUXP_SESSION_CONFIG/$XDG_CONFIG_HOME/}/\/}"
+
+  # if git -C $XDG_CONFIG_HOME status --porcelain | grep -q $GitPath; then
+
+  #   git -C $XDG_CONFIG_HOME reset
+  #   git -C $XDG_CONFIG_HOME add $GitPath
+  #   git -C $XDG_CONFIG_HOME commit -m "Update $GitPath"
+
+  # fi
+
+}
+
+:w

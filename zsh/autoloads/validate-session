@@ -1,0 +1,44 @@
+# autoload
+
+validate_session () {
+
+  if [[ ! -n $TMUX ]]; then
+    >&2 echo "Saving only possible in tmux."
+    return 1
+  fi
+
+  if ! command -v tmuxp &> /dev/null; then
+   >&2 echo "Dependency tmuxp is not installed."
+    return 1
+  fi
+
+  if [[ ! -n $TMUXP_SESSION_HOME ]]; then
+    >&2 echo "Session home directory not set."
+    return 1
+  fi
+
+  local Name="${TMUXP_SESSION_HOME}"
+
+  if [[ $Name == "$HOME" ]]; then
+    Name="home"
+  else
+    Name="${Name/$HOME}"
+    Name="${Name//[. ]/_}"
+    Name="${Name/\//}"
+  fi
+
+  local SessionName="$(tmux display-message -p '#S')"
+
+  if [[ ! $Name == $SessionName ]]; then
+    >&2 echo "Session name not properly set."
+    return 1
+  fi
+
+  if [[ ! -n $TMUXP_SESSION_CONFIG ]]; then
+    >&2 echo "Session config file not set."
+    return 1
+  fi
+
+}
+
+validate_session

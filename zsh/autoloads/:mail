@@ -1,0 +1,9 @@
+# autoload
+
+:mail () {
+
+  tmux display-popup -E mail
+
+}
+
+:mail

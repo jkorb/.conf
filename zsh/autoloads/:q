@@ -1,0 +1,9 @@
+# autoload
+
+:q () {
+
+  exit
+
+}
+
+:q

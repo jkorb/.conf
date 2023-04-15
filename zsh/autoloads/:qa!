@@ -1,0 +1,13 @@
+# autoload
+
+:qa! () {
+
+  if [[ -n $TMUX ]]; then
+    tmux kill-session
+  else
+    :q!
+  fi
+
+}
+
+:qa!
