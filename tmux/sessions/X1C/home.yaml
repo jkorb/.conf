@@ -1,20 +1,12 @@
 session_name: home
+windows:
+- focus: 'true'
+  layout: 907e,208x103,0,0,1
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/jkorbmacher
+  window_name: home
 environment:
   TMUXP_SESSION_HOME: "/home/jkorbmacher"
   TMUXP_SESSION_CONFIG: "/home/jkorbmacher/.config/tmux/sessions/X1C/home.yaml"
-windows:
-- focus: 'true'
-  window_name: home
-  panes:
-  - shell_command:
-  start_directory: /home/jkorbmacher
-- focus: 'true'
-  window_name: mail
-  panes:
-  - shell_command: mail
-  start_directory: /home/jkorbmacher
-- focus: 'true'
-  window_name: calendar
-  panes:
-  - shell_command: calendar
-  start_directory: /home/jkorbmacher
