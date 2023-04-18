@@ -50,7 +50,6 @@ wait_for_mu() {
 }
 
 if ! davmaild_is_running; then
-    echo "Starting daemon" >> ./log.txt
     davmaild &>/dev/null &
     sleep 1
 fi
