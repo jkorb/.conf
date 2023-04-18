@@ -64,7 +64,7 @@ bind pager               G          bottom
 
 macro index,pager        gf         "<change-folder>?"                                                              "open ..."
 macro index,pager        gi         "<change-folder>!<enter>"                                                       "open inbox"
-macro index,pager        /          "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mail/recent-search "  "mu find"
+macro index,pager        /          "<shell-escape>mu find --clearlinks --format=links --linksdir="$MAILDIR/recent-search" "  "mu find"
 macro index,pager        gs         "<change-folder-readonly>~/.mail/recent-search\n"                                      "mu find results"
 # macro index,pager        gs         "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mail/search "  "mu find"
 # macro index,pager        gS         "<change-folder-readonly>~/.mail/search\n"                                      "mu find results"
