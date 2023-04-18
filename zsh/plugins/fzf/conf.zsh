@@ -24,7 +24,7 @@ FZF_DEFAULT_OPTS+="
 
 FZF_DEFAULT_OPTS+="
   --color bg:-1,fg:7,hl:5
-  --color bg+:4,fg+:0,hl+:5
+  --color bg+:4,fg+:0,hl+:2
   --color preview-bg:-1,preview-fg:7
   --color border:-1,gutter:-1,header:8
   --color info:8,marker:5,pointer:-1

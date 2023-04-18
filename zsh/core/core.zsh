@@ -3,7 +3,7 @@ export SAVEHIST=100000   # Max events to store in history file.
 export HISTFILE=~/.zsh_history
 
 if [[ -n $TMUX ]]; then
-  export NVIM_LISTEN_ADDRESS="/tmp/nvim_${USER}_$(tmux display-message -p "#{session_id}")_$(tmux display-message -p "#{window_id}")"
+  export NVIM_LISTEN_ADDRESS="/tmp/nvim_${$(tmux display-message -p '#S')//\//_}_$(tmux display-message -p "#{window_id}")"
 fi
 
 # For gpg-agent
