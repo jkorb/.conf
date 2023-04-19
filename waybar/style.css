@@ -1,0 +1,70 @@
+* {
+    font-family: "FiraCode Nerd Font";
+    font-size: 14px;
+    background: transparent;
+    min-height: 0;
+}
+
+.modules-right {
+    color: #abb2bf;
+    padding: 0px;
+}
+
+.modules-left {
+    padding: 0px;
+}
+
+#window {
+    color: transparent;
+    background-color: transparent;
+}
+
+#workspaces button {
+    color: #abb2bf;
+    padding: 4px;
+    border-radius: 0px;
+    border-width: 0px 0px 0px 0px;
+    margin-right: 6px;
+    border-bottom: 4px solid transparent;
+}
+
+#workspaces button.active {
+    border-radius: 0px;
+    border-width: 0px 0px 0px 0px;
+    border-bottom: 4px solid #abb2bf;
+}
+
+/* #workspaces button.active { */
+/*     color: #282c34; */
+/*     background-color: #61afef; */
+/*     border-radius: 0px; */
+/*     border-bottom: 4px solid #61afef; */
+/* } */
+
+#bluetooth, #network, #backlight, #pulseaudio, #battery {
+    padding-right: 10px;
+    padding-left: 10px;
+    border-right: 2px dotted #abb2bf;
+    /* border-bottom: 4px solid transparent; */
+}
+
+#clock {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+#tray {
+    padding-right: 10px;
+    padding-left: 10px;
+    border-left: 2px dotted #abb2bf;
+}
+
+#battery.critical {
+    color: #e06c75;
+}
+
+#network.disconnected {
+    color: #ff5555;
+}
+

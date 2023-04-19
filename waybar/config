@@ -1,0 +1,80 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "margin": 0,
+
+    "modules-left": ["wlr/workspaces"],
+    "modules-right": ["battery", "network", "bluetooth", "backlight", "pulseaudio", "clock", "tray"],
+
+    "wlr/workspaces": {
+      "format": "{name}",
+      "on-click": "activate",
+      "sort-by-number": true,
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 15
+    },
+
+    "clock": {
+        "format": "{:%a, %b %e, %R}",
+        "interval": 30
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-device-preference": [ "QCE2", "MX Vertical" ],
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+
+    "battery": {
+        "bat": "BAT0",
+        "states": {
+            "full": 99,
+            "good": 98,
+            "normal": 98,
+            "warning": 20,
+            "critical": 20
+        },
+
+        "format": "{icon}  {capacity}% ({timeTo})",
+        "format-good": "{icon}  {capacity}%",
+        "format-full": "  {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "interval": 30
+    },
+
+
+    "network": {
+        "interface": "wlp0s20f3",
+        "format-wifi": "  {essid}",
+        "format-disconnected": "睊",
+        "interval": 60
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["","","",""],
+        "interval": 60
+    },
+
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted":"婢 {volume}%",
+        "interval": 60,
+
+        "format-icons": {
+            "default": [""]
+        },
+
+        "on-click": "pavucontrol"
+    }
+}
