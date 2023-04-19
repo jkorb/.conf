@@ -1,0 +1,30 @@
+#! /usr/bin/zsh
+
+cache_dir="$XDG_CACHE_DIR/neomutt"
+search_dir="$MAILDIR/recent-search"
+search_hist="$cache_dir/search_hist"
+tmp_searchfile=$cache_dir/tmp_searchfile
+
+if [[ ! -d "$cache_dir" ]]; then
+  mkdir -p "$cache_dir"
+fi
+
+if [[ ! -f "$search_hist" ]]; then
+  touch "$search_hist"
+fi
+
+query=$(sort $search_hist | uniq | fzf --height=100% --prompt '/ ' --history="$search_hist" --history-size=10000 --bind=enter:replace-query+print-query --preview "mu find --fields \"f s\" {}")
+
+if [[ -z $query ]]; then
+  : > $tmp_searchfile
+  exit 0
+fi
+
+rm -rf $search_dir/*
+
+mu find -q --clearlinks --format=links --linksdir="$search_dir" "$query" &> /dev/null
+
+
+echo "push <change-folder-readonly>~/.mail/recent-search<enter>" > $tmp_searchfile
+
+exit 0
