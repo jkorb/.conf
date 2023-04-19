@@ -9,6 +9,7 @@
 !latexmk
 !msmtp
 !neomutt
+!nnn
 !nvim
 !tmux
 !vdirsyncer
