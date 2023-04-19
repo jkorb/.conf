@@ -51,13 +51,13 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 10
+  size: 12
 
 key_bindings:
   - { key: Slash,   mods: Control,       chars: "\x1f"                 }
 
 window:
-  opacity: 0.8
+  opacity: 0.9
 
 import:
  - ~/.local/share/alacritty/alacritty-theme/themes/one_dark.yaml
