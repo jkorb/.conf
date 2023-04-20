@@ -3,7 +3,9 @@
 !.bootstrap
 
 !alacritty
+!cmus
 !davmail
+!hypr
 !git
 !khal
 !latexmk
@@ -13,6 +15,7 @@
 !nvim
 !tmux
 !vdirsyncer
+!waybar
 !zathura
 !zsh
 
