@@ -1,8 +1,14 @@
 * {
     font-family: "FiraCode Nerd Font";
     font-size: 14px;
-    background: transparent;
+    /* background: #000000; */
     min-height: 0;
+}
+
+
+window#waybar {
+    background: #000000;
+    color: #abb2bf;
 }
 
 .modules-right {
@@ -14,37 +20,25 @@
     padding: 0px;
 }
 
-#window {
-    color: transparent;
-    background-color: transparent;
-}
-
 #workspaces button {
     color: #abb2bf;
     padding: 4px;
-    border-radius: 0px;
-    border-width: 0px 0px 0px 0px;
     margin-right: 6px;
-    border-bottom: 4px solid transparent;
 }
 
 #workspaces button.active {
+    color: #282c34;
+    background: #61afef;
     border-radius: 0px;
-    border-width: 0px 0px 0px 0px;
-    border-bottom: 4px solid #abb2bf;
 }
 
-/* #workspaces button.active { */
-/*     color: #282c34; */
-/*     background-color: #61afef; */
-/*     border-radius: 0px; */
-/*     border-bottom: 4px solid #61afef; */
+/* #workspaces button.persistant { */
+/*     border: 4px solid #e06c75; */
 /* } */
 
 #bluetooth, #network, #backlight, #pulseaudio, #battery {
     padding-right: 10px;
     padding-left: 10px;
-    border-right: 2px dotted #abb2bf;
     /* border-bottom: 4px solid transparent; */
 }
 
@@ -57,7 +51,6 @@
 #tray {
     padding-right: 10px;
     padding-left: 10px;
-    border-left: 2px dotted #abb2bf;
 }
 
 #battery.critical {
