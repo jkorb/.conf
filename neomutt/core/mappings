@@ -65,10 +65,10 @@ bind pager               G          bottom
 macro index,pager        gf         "<change-folder>?"                                                                "open ..."
 macro index,pager        gi         "<change-folder>!<enter>"                                                         "open inbox"
 # macro index,pager        /          "<shell-escape>mu find --clearlinks --format=links --linksdir="$MAILDIR/recent-search" "  "mu find"
-macro index,pager        /          "<shell-escape>$XDG_CONFIG_HOME/neomutt/scripts/neomutt_search<enter><enter-command>source $XDG_CACHE_DIR/neomutt/tmp_searchfile <enter>"  "mu find"
 macro index,pager        gs         "<change-folder-readonly>~/.mail/recent-search\n"                                 "goto recent search"
 # macro index,pager        gs         "<shell-escape>mu find --clearlinks --format=links --linksdir=~/.mail/search "  "mu find"
 # macro index,pager        gS         "<change-folder-readonly>~/.mail/search\n"                                      "mu find results"
+macro index,pager        /          "<shell-escape>$XDG_CONFIG_HOME/neomutt/scripts/neomutt_search<enter><enter-command>source $XDG_CACHE_DIR/neomutt/tmp_searchfile <enter>"  "find mail"
 macro index,pager        gr         "<shell-escape> mailsync & <enter><sync-mailbox>"                                 "sync all mailboxes"
 # macro index,pager        gr         "<shell-escape> ~/.config/neomutt/scripts/sync & <enter><sync-mailbox>"         "sync all mailboxes"
 
@@ -80,8 +80,8 @@ bind index               ss         save-message
 # Attachment 
 # ----------------------------------------
 
-bind attach              s          save-entry
-
+# bind attach              s          save-entry
+macro attach              s         "<shell-escape>neomutt_dirpicker<enter><enter-command>source $XDG_CACHE_DIR/neomutt/save_tmp<enter><enter-command><enter>" "Save file to ..."
 
 # Composing
 # ----------------------------------------
@@ -94,7 +94,7 @@ bind  index,pager        c@         compose-to-sender
 
 bind  compose            cc         send-message
 bind  compose            ce         edit-message 
-macro compose            ca         "<shell-escape>$XDG_CONFIG_HOME/neomutt/scripts/neomutt_filepicker<enter><enter-command>source $XDG_CACHE_DIR/neomutt/attach_tmp<enter><shell-escape>bash $XDG_CONFIG_HOME/neomutt/scripts/neomutt_filepicker clean<enter>" "Attach with nnn"
+macro compose            ca         "<shell-escape>$XDG_CONFIG_HOME/neomutt/scripts/neomutt_filepicker<enter><enter-command>source $XDG_CACHE_DIR/neomutt/attach_tmp<enter><shell-escape>bash $XDG_CONFIG_HOME/neomutt/scripts/neomutt_filepicker clean<enter>" "Attach ..."
 
 bind  compose            dd         detach-file
 
@@ -114,10 +114,6 @@ bind index               \005      next-entry		# Mouse wheel
 
 bind pager               \031      previous-line	# Mouse wheel
 bind pager               \005      next-line		# Mouse wheel
-
-# macro index              sat ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015'q<untag-pattern>.\\015\"\015<mark-message>q<enter><untag-pattern>.<enter><tag-thread><tag-prefix-cond><save-message>?"     "save thread to a mailbox"
-# macro index              \;s ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<tag-prefix-cond><save-message>?"                                                                                     "save tagged messages to a mailbox"
-# macro index              \;c ":macro browser \\015 \"\<select-entry\>\<sync-mailbox\>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015:macro browser q \"<exit>:bind browser \\\\015 select-entry\\015:bind browser q exit\\015\"\015<tag-prefix-cond><copy-message>?"                                                                                     "copy tagged messages to a mailbox"
 
 # Deleting
 # ----------------------------------------

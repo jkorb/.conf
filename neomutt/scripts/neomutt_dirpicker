@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+cache_dir="$XDG_CACHE_DIR/neomutt"
+tmpfile="$cache_dir/save_tmp"
+
+if [[ ! -d "$cache_dir" ]]; then
+	mkdir -p "$cache_dir"
+fi
+
+if [[ $1 == "clean" ]]; then
+	[[ -f $tmpfile ]] && rm $tmpfile
+	exit 0
+fi
+
+if [[ ! -z $@ ]]; then
+	exit 1
+fi
+
+nnn -J -p $tmpfile
+
+if [[ -f $tmpfile ]]; then
+	sed -i 's/ /\\ /g' $tmpfile
+	echo "$(awk 'BEGIN {printf "%s", "push "} {printf "%s", "<tag-prefix><save-entry>\""$0"\"<enter>"}' $tmpfile)" >$tmpfile
+fi
+
+# Based on https://github.com/anufrievroman/Neomutt-File-Picker
