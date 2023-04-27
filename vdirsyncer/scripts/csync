@@ -33,3 +33,7 @@ files_in_cal_0=$(ls $CalendarPath)
 
 wait_for_vdirsyncer
 vdirsyncer sync &>/dev/null
+
+if [[ ! $? == 0 ]]; then
+  >&2 echo "Syncing failed, please inspect."
+fi
