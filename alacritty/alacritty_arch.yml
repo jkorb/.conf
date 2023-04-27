@@ -60,6 +60,8 @@ key_bindings:
 
 window:
   opacity: 0.9
+  dynamic_title: true
+  title: Tmux_client
 
 import:
  - ~/.local/share/alacritty/alacritty-theme/themes/one_dark.yaml
