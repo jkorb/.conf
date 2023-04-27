@@ -54,7 +54,9 @@ font:
   size: 12
 
 key_bindings:
-  - { key: Slash,   mods: Control,       chars: "\x1f"                 }
+  - { key: Slash,       mods: Control,       chars: "\x1f"                 }
+  - { key: Semicolon,   mods: Control,   chars: "\x1c"                 }
+  - { key: Period,      mods: Control,      chars: "\x1e"                 }
 
 window:
   opacity: 0.9
