@@ -75,14 +75,10 @@
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted":"婢 {volume}%",
+        "format" : " {volume}%",
+        "format-bluetooth" : " {volume}% 󰂰",
+        "format-muted" : " {volume}%",
         "interval": 60,
-
-        "format-icons": {
-            "default": [""]
-        },
-
         "on-click": "pavucontrol"
     }
 }
