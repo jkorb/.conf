@@ -35,8 +35,9 @@
     },
 
     "bluetooth": {
-        "format": " {status}",
+        "format-on": "",
         "format-connected": " {device_alias}",
+        "format-off" : "󰂲",
         "format-device-preference": [ "QCE2", "MX Vertical" ],
         "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
         "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
