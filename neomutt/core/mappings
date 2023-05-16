@@ -81,7 +81,7 @@ bind index               ss         save-message
 # ----------------------------------------
 
 # bind attach              s          save-entry
-macro attach              s         "<shell-escape>neomutt_dirpicker<enter><enter-command>source $XDG_CACHE_DIR/neomutt/save_tmp<enter><enter-command><enter>" "Save file to ..."
+macro attach              s         "<shell-escape>neomutt_dirpicker<enter><enter-command>source $XDG_CACHE_DIR/neomutt/save_tmp<enter><enter-command>" "Save file to ..."
 
 # Composing
 # ----------------------------------------
