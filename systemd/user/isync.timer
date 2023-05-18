@@ -1,0 +1,12 @@
+[Unit]
+Description=Mailbox synchronization timer
+Requires=davmail.service
+After=davmail.service
+
+[Timer]
+OnBootSec=2m
+OnUnitActiveSec=5m
+Unit=isync.service
+
+[Install]
+WantedBy=timers.target

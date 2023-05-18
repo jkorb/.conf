@@ -1,0 +1,9 @@
+[Unit]
+Description=Exchange gateway service using davmail
+
+[Service]
+ExecStart=/usr/bin/davmail /home/jkorbmacher/.config/davmail/davmail.properties
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
