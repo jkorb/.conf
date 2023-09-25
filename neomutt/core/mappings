@@ -63,6 +63,7 @@ bind pager               gg         top
 bind pager               G          bottom
 
 macro index,pager        gf         "<change-folder>?"                                                                "open ..."
+macro generic        gi         "<change-folder>!<enter>"                                                         "open inbox"
 macro index,pager        gi         "<change-folder>!<enter>"                                                         "open inbox"
 # macro index,pager        /          "<shell-escape>mu find --clearlinks --format=links --linksdir="$MAILDIR/recent-search" "  "mu find"
 macro index,pager        gs         "<change-folder-readonly>~/.mail/recent-search\n"                                 "goto recent search"

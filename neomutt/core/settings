@@ -23,6 +23,13 @@ set   attach_save_dir     = "~/Downloads"
 # named-mailboxes gmail/trash   '+gmail/[Google Mail]/Trash'
 # named-mailboxes gmail/spam    '+gmail/[Google Mail]/Spam'
 
+named-mailboxes logica/inbox      '+logica/Inbox'
+named-mailboxes logica/archive    '+logica/Archive'
+named-mailboxes logica/sent       '+logica/Sent Items'
+named-mailboxes logica/drafts     '+logica/Drafts'
+named-mailboxes logica/trash      '+logica/Deleted Items'
+# named-mailboxes logica/junk       '+logica/Junk Email'
+
 named-mailboxes uu/inbox      '+uu/INBOX'          
 named-mailboxes uu/archive    '+uu/Archive' 
 named-mailboxes uu/sent       '+uu/Sent'    
