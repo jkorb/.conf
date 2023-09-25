@@ -1,91 +1,208 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 20,
-    "margin": 0,
-
-    "modules-left": ["wlr/workspaces"],
-    "modules-right": ["battery", "network", "bluetooth", "backlight", "pulseaudio", "clock", "tray"],
-
-    "wlr/workspaces": {
-      "format": "{name}",
-      "on-click": "activate",
-      "sort-by-number": true,
-      "persistent_workspaces" : {
-          "1" : ["eDP-1"],
-          "2" : ["eDP-1"],
-          "3" : ["eDP-1"],
-          "4" : ["eDP-1"],
-          "5" : ["eDP-1"],
-          "6" : ["DP-1"],
-          "7" : ["DP-1"],
-          "8" : ["DP-1"],
-          "9" : ["DP-1"],
-          "10" : ["DP-1"],        }
+  "layer": "top",
+  "position": "top",
+  "height": 20,
+  "margin-right": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/left-bracket",
+    "custom/systemd",
+    "custom/right-bracket",
+    "custom/divider",
+    "custom/mail",
+    "custom/divider",
+    "custom/github",
+    "custom/divider",
+    "battery",
+    "custom/divider",
+    "backlight",
+    "custom/divider",
+    "pulseaudio",
+    "custom/divider",
+    "network",
+    "custom/divider",
+    "bluetooth",
+    "custom/divider",
+    "idle_inhibitor",
+    "custom/divider",
+    "hyprland/language",
+    "custom/divider",
+    "custom/calendar",
+  ],
+  "hyprland/workspaces": {
+    "active-only" : false,
+    "all-outputs" : false,
+    "format": "{name}",
+    "persistent-workspaces": {
+      "1": [
+        "eDP-1"
+      ],
+      "2": [
+        "eDP-1"
+      ],
+      "3": [
+        "eDP-1"
+      ],
+      "4": [
+        "eDP-1"
+      ],
+      "5": [
+        "eDP-1"
+      ],
+      "6": [
+        "DP-1"
+      ],
+      "7": [
+        "DP-1"
+      ],
+      "8": [
+        "DP-1"
+      ],
+      "9": [
+        "DP-1"
+      ],
+      "10": [
+        "DP-1"
+      ],
     },
 
-    "tray": {
-        "icon-size": 18,
-        "spacing": 15
+    "sort-by": "default",
     },
-
-    "clock": {
-        "format": "{:%a, %b %e, %R}",
-        "interval": 30
-    },
-
-    "bluetooth": {
-        "format-on": "",
-        "format-connected": " {device_alias}",
-        "format-off" : "󰂲",
-        "format-device-preference": [ "QCE2", "MX Vertical" ],
-        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-    },
-
-    "battery": {
-        "bat": "BAT0",
-        "states": {
-            "full": 100,
-            "good": 98,
-            "normal": 98,
-            "warning": 40,
-            "critical": 20
-        },
-        "format": "{icon}  {capacity}% ({timeTo})",
-        "format-good": "{icon}  {capacity}%",
-        "format-full": "  {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "interval": 30
-    },
-
-    "network": {
-        "format" : "{ifname}",
-        "format-wifi": "󰖩 {essid}",
-        "format-linked" : "󱚵 {essid}",
-        "format-disconnected": "󰖪",
-        "format-ethernet" : "󰈀 ",
-        "interval": 60,
-        "tooltip" : "true",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "tooltip-format-wifi": "󰖩 {essid} ({signalStrength}%)",
-        "tooltip-format-ethernet": "󰈀 {ifname}",
-        "tooltip-format-disconnected": "Disconnected",
-    },
-
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "󰳲 {percent}%",
-        "interval": 60
-    },
-
-    "pulseaudio": {
-        "format" : " {volume}%",
-        "format-bluetooth" : "󰂰 {volume}%",
-        "format-muted" : " {volume}%",
-        "interval": 60,
-        "on-click": "pavucontrol"
+  "hyprland/language": {
+  "format" : "{}",
+  "format-en" : "🇺🇸",
+  "format-de" : "🇩🇪",
+  "on-click" : "$HOME/.config/waybar/scripts/waybar-toggle-kbdmap.zsh"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 15,
+    "show-passive-items": true
+  },
+  "custom/systemd": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/waybar-systemd.py",
+    "signal": 8,
+    "on-click": "zsh -c 'alacritty -t popup ' ; pkill -SIGRTMIN+8 waybar",
+    "interval": 300,
+    "tooltip": true
+  },
+  "custom/mail": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/scripts/waybar-mail.py",
+    "signal": 9,
+    "on-click": "zsh -c 'alacritty -t popup -e mail' ; pkill -SIGRTMIN+9 waybar",
+    "on-click-right": "systemctl --user start isync ; pkill -SIGRTMIN+9 waybar",
+    "interval": 300,
+    "tooltip": true
+  },
+  "custom/pacman": {
+    "format": "{}",
+    "interval": 3600,
+    "exec": "$XDG_CONFIG_HOME/waybar/scripts/waybar-pacman.py",
+    "return-type": "json",
+    "exec-if": "exit 0",
+    "signal": 10,
+    "on-click": "zsh -c 'alacritty -t popup -e yay -Syu' ; pkill -SIGRTMIN+10 waybar"
+  },
+  "custom/github": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 60,
+    "exec": "$HOME/.config/waybar/scripts/waybar-github.py",
+    "on-click": "xdg-open https://github.com/notifications"
+  },
+  "custom/calendar": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 30,
+    "tooltip": true,
+    "exec": "$HOME/.config/waybar/scripts/waybar-calendar.py",
+    "on-click": "zsh -c 'alacritty -t popup -e calendar'"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰅶",
+      "deactivated": "󰾪"
     }
+  },
+  "custom/divider": {
+    "format": "|",
+    "tooltip": false
+  },
+  "custom/left-bracket": {
+    "format": "[",
+    "tooltip": false
+  },
+  "custom/right-bracket": {
+    "format": "]",
+    "tooltip": false
+  },
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-connected": "󰂱",
+    "format-off": "󰂲",
+    "on-click" : "$HOME/.config/waybar/scripts/waybar-toggle-bluetooth.sh",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "full": 100,
+      "good": 98,
+      "normal": 98,
+      "warning": 40,
+      "critical": 20
+    },
+    "format-charging": "󱐋 {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "interval": 30
+  },
+  "network": {
+    "format-wifi": "󰖩",
+    "format-linked": "󱚵",
+    "format-disconnected": "󰀝",
+    "format-ethernet": "󰈀",
+    "interval": 60,
+    "on-click" : "$HOME/.config/waybar/scripts/waybar-toggle-wifi.sh",
+    "tooltip": "true",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "󰖩 {essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "󰈀 {ifname}",
+    "tooltip-format-disconnected": "Disconnected"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": " {percent}%",
+    "interval": 60,
+    "on-click" : "$HOME/.config/waybar/scripts/waybar-toggle-brightness.sh"
+  },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-bluetooth": "󰂰 {volume}%",
+    "format-muted": "<span color=\"#e06c75\"> </span>{volume}%",
+    "interval": 60,
+    "on-click": "pavucontrol",
+    "on-click-right": "amixer -q set Master toggle"
+  }
 }

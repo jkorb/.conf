@@ -1,56 +1,111 @@
 * {
-    font-family: "FiraCode Nerd Font";
-    font-size: 14px;
-    /* background: #000000; */
-    min-height: 0;
+  border: none;
+  border-radius: 0;
+
+  font-family: "FiraCode Nerd Font";
+  /* font-weight: bold; */
+  font-size: 14px;
+
+  min-height: 0;
 }
 
-
 window#waybar {
-    background: #000000;
-    color: #abb2bf;
+  background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .25), transparent);
+  color: black;
+  /* background: transparent; */
+  /* color: #abb2bf; */
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
 }
 
 .modules-right {
-    color: #abb2bf;
-    padding: 0px;
+  background: transparent;
+  padding: 0px;
 }
 
 .modules-left {
-    padding: 0px;
+  background: #000000;
+  padding: 0px;
 }
 
 #workspaces button {
-    color: #abb2bf;
-    padding: 4px;
-    margin-right: 6px;
+  border-top: 2px solid white;
+  color: #a9b1d6;
+  padding: 4px;
+  margin-right: 6px;
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.35);
 }
 
 #workspaces button.active {
-    color: #282c34;
-    background: #61afef;
-    border-radius: 0px;
+    border-top: 2px solid transparent;
+    color: black;
+    font-weight: bold;
+    background: #7aa2f7;
+    /* background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .25), transparent); */
 }
 
-/* #workspaces button.persistant { */
-/*     border: 4px solid #e06c75; */
-/* } */
-
-#bluetooth, #network, #backlight, #pulseaudio, #battery {
-    padding-right: 10px;
-    padding-left: 10px;
-    /* border-bottom: 4px solid transparent; */
+#workspaces button.visible {
+    border-top: 2px solid transparent;
+    color: black;
+    background: #7aa2f7;
 }
 
-#clock {
-    padding-right: 10px;
-    padding-left: 10px;
+#workspaces button.empty {
+    border-top: 2px solid transparent;
 }
 
+
+
+/* Colors */
+
+#custom-arch {
+  background: #000000;
+  color: blue;
+  padding: 10px;
+}
+
+#idle_inhibitor, #backlight, #battery, #bluetooth, #custom-calendar,
+#custom-mail, #custom-pacman, #custom-divider, #custom-systemd, #custom-github, #network,
+#pulseaudio, #tray {
+  background: #000000;
+  color: #dfdfdf;
+}
+
+#pulseaudio {
+    transition: background linear .25s;
+}
+
+#custom-left-bracket, #custom-right-bracket {
+  background: #000000;
+  color: #dfdfdf;
+}
+
+/* Padding */
+
+#network, #idle_inhibitor, #backlight, #pulseaudio, #battery, #custom-mail,
+#custom-pacman, #custom-github, #custom-mail, #custom-github, #custom-pacman,
+#battery, #backlight, #pulseaudio,  #bluetooth, #custom-divider {
+  padding: 5px;
+}
+
+#custom-calendar {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* Borders */
+
+/* Tray */
 
 #tray {
-    padding-right: 10px;
-    padding-left: 10px;
+    /* background-clip: content-box; */
+    color: #DFDFDF;
+    margin-right: 25px;
+    padding: 10px;
 }
 
 #battery.critical {
@@ -59,5 +114,9 @@ window#waybar {
 
 #network.disconnected {
     color: #ff5555;
+}
+
+#idle_inhibitor.activated  {
+  color: #d19a66;
 }
 
