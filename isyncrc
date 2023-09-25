@@ -1,8 +1,45 @@
+IMAPAccount logica
+Host localhost
+Port 1143
+AuthMechs LOGIN
+PassCmd "pass show uu | sed -n '1p'"
+SSLType None
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+User j.korbmacher@uu.nl/inleiding.logica@uu.nl
+Timeout 0
+
+IMAPStore logica-remote
+Account logica
+# Path "inleiding.logica@uu.nl/"
+PathDelimiter "/"
+
+
+MaildirStore logica-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/logica/
+Inbox ~/.mail/logica/Inbox
+
+Channel logica
+Far :logica-remote:
+Near :logica-local:
+# Patterns "INBOX" "Archive"  # "Archive" "Drafts" "Sent" "Trash" "Junk" "Unsent Messages"
+Patterns *
+# Patterns  "Archive"  "Drafts" "Inbox" "Sent Items" "Deleted Items"
+Sync All
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+Remove Both
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+
 IMAPAccount uu
 Host localhost
 Port 1143
 AuthMechs LOGIN
-PassCmd "pass show uu | sed -n '1p'" 
+PassCmd "pass show uu | sed -n '1p'"
 SSLType None
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 User j.korbmacher@uu.nl
