@@ -4,6 +4,19 @@ return {
     opts = {
       servers = {
         yamlls = {},
+        lua_ls = {
+          -- mason = false, -- set to false if you don't want this server to be installed with mason
+          settings = {
+            Lua = {
+              workspace = {
+                checkThirdParty = false,
+              },
+              completion = {
+                callSnippet = "Replace",
+              },
+            },
+          },
+        },
         bashls = {},
         pyright = {},
         marksman = {},
@@ -41,15 +54,15 @@ return {
   {
     "jkorb/ltex_extra.nvim",
     dependencies = { "neovim/nvim-lspconfig" },
-    ft = { "plaintex", "tex", "latex", "bib", "markdown", "mail", "txt", "gitcommit" },
+    ft = { "plaintex", "tex", "latex", "bib", "markdown", "mail", "text", "gitcommit" },
     branch = "switchLanguage-feature",
     opts = {
       path = vim.fn.stdpath("config") .. "/spell",
       server_opts = {
-        filetypes = { "plaintex", "tex", "latex", "bib", "markdown", "mail", "txt", "gitcommit" },
+        filetypes = { "plaintex", "tex", "latex", "bib", "markdown", "mail", "text", "gitcommit" },
         settings = {
           ltex = {
-            checkFrequency = "save",
+            checkFrequency = "edit",
             completionEnabled = true,
           },
         },

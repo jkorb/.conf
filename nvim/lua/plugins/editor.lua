@@ -1,8 +1,8 @@
 return {
   {
     "alexghergh/nvim-tmux-navigation",
-    lazy = true,
-    event = "VimEnter",
+    -- lazy = true,
+    -- event = "VimEnter",
     opts = {
       disable_when_zoomed = true,
     },
@@ -48,5 +48,12 @@ return {
     config = function(_, opts)
       require("mini.bracketed").setup(opts)
     end,
+  },
+  {
+    "RRethy/vim-illuminate",
+    -- enabled = false,
+    opts = {
+      filetypes_denylist = { "plaintex", "tex", "latex", "bib", "markdown", "mail", "text" },
+    },
   },
 }

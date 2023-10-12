@@ -1,31 +1,40 @@
 return {
+  -- {
+  --   "navarasu/onedark.nvim",
+  --   opts = {
+  --     style = "darker",
+  --     transparent = true,
+  --     highlights = {
+  --       ["@text.math"] = { fg = "$purple" },
+  --       ["@text.environment"] = { fg = "$cyan" },
+  --       ["@text.environment.name"] = { fg = "$yellow" },
+  --     },
+  --   },
+  -- },
   {
-    "navarasu/onedark.nvim",
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
     opts = {
-      style = "darker",
+      style = "night",
       transparent = true,
-      highlights = {
-        ["@text.math"] = { fg = "$purple" },
-        ["@text.environment"] = { fg = "$cyan" },
-        ["@text.environment.name"] = { fg = "$yellow" },
-      },
     },
   },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "onedark",
-    },
-  },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "onedark",
+  --   },
+  -- },
   {
     "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     init = function()
       require("config.evil_lualine")
     end,
-    opts = function()
-      return {}
-    end,
+    -- opts = function()
+    --   return {}
+    -- end,
   },
   {
     "folke/noice.nvim",
