@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-if [[ hyprctl devices | grep olkb-planck ]]; then
+if hyprctl devices | grep -q olkb-planck; then
   hyprctl switchxkblayout olkb-planck next
 fi
 

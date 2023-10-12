@@ -1,38 +1,43 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 20,
+  "height": 30,
+
   "margin-right": 0,
   "margin-top": 0,
   "margin-bottom": 0,
   "margin-left": 0,
+
   "modules-left": [
-    "hyprland/workspaces"
+    "custom/arch",
+    "hyprland/workspaces",
+    "hyprland/window"
   ],
   "modules-right": [
     "tray",
+    "custom/separator",
     "custom/left-bracket",
     "custom/systemd",
     "custom/right-bracket",
-    "custom/divider",
+    "custom/separator",
     "custom/mail",
-    "custom/divider",
+    "custom/separator",
     "custom/github",
-    "custom/divider",
+    "custom/separator",
     "battery",
-    "custom/divider",
+    "custom/separator",
     "backlight",
-    "custom/divider",
+    "custom/separator",
     "pulseaudio",
-    "custom/divider",
+    "custom/separator",
     "network",
-    "custom/divider",
+    "custom/separator",
     "bluetooth",
-    "custom/divider",
+    "custom/separator",
     "idle_inhibitor",
-    "custom/divider",
+    "custom/separator",
     "hyprland/language",
-    "custom/divider",
+    "custom/separator",
     "custom/calendar",
   ],
   "hyprland/workspaces": {
@@ -56,19 +61,19 @@
         "eDP-1"
       ],
       "6": [
-        "DP-1"
+        "DP-1", "DP-3", "DP-4"
       ],
       "7": [
-        "DP-1"
+        "DP-1", "DP-3", "DP-4"
       ],
       "8": [
-        "DP-1"
+        "DP-1", "DP-3", "DP-4"
       ],
       "9": [
-        "DP-1"
+        "DP-1", "DP-3", "DP-4"
       ],
       "10": [
-        "DP-1"
+        "DP-1", "DP-3", "DP-4"
       ],
     },
 
@@ -135,7 +140,7 @@
       "deactivated": "󰾪"
     }
   },
-  "custom/divider": {
+  "custom/separator": {
     "format": "|",
     "tooltip": false
   },
@@ -204,5 +209,23 @@
     "interval": 60,
     "on-click": "pavucontrol",
     "on-click-right": "amixer -q set Master toggle"
+  },
+  "custom/arch" : {
+    "format" : "󰣇",
+    "on-click" : "zsh -c 'alacritty -t popup -e btop'",
+    "on-click-right" : "zsh -c 'alacritty -t popup -e yay -Syu'",
+    },
+  "hyprland/window": {
+    "format": "<span color='#a9b1d6'></span> - {}",
+    "rewrite": {
+      "<span color='#a9b1d6'></span> (.*) - Brave"                     : "<span color='#7aa2f7'></span> $1",
+      "<span color='#a9b1d6'></span> - tmux (.*)"                      : "<span color='#f7768e'></span> $1",
+      "<span color='#a9b1d6'></span> (.*) \\| Microsoft Teams Classic" : "<span color='#7aa2f7'>󰊻</span> - $1",
+      "<span color='#a9b1d6'></span> - cmus"                           : "<span color='#9ece6a'></span> - cmus",
+      "<span color='#a9b1d6'></span> (.*)\\.pdf"                       : "<span color='#f7768e'>󰈦</span> $1",
+      "<span color='#a9b1d6'></span> - "                               : " 󰟢 ",
+
+    },
+    "separate-outputs": true
   }
 }

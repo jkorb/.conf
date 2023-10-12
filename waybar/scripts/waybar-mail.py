@@ -67,6 +67,6 @@ if __name__ == "__main__":
         output['text'] = mailbox_empty + " " + str(unread_mail)
         output['tooltip']= smiley + " No unread emails."
     else:
-        output['text'] = "<span color='#e06c75'>\ueb1c</span> " + str(unread_mail)
+        output['text'] = "<span color='#f7768e'>\ueb1c</span> " + str(unread_mail)
 
     print(json.dumps(output, indent=None, separators=(",",": ")))
