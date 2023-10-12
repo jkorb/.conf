@@ -14,17 +14,19 @@ export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export SUDO_EDITOR="nvim"
 export EDITOR="nvim"
 
-if uname | grep -q Darwin &> /dev/null; then
-  alias alacritty="alacritty --config-file=$XDG_CONFIG_HOME/alacritty/alacritty_macOS.yml"
-else
-  alias alacritty="alacritty --config-file=$XDG_CONFIG_HOME/alacritty/alacritty_arch.yml"
-fi
-
+# if uname | grep -q Darwin &> /dev/null; then
+#   alias alacritty="alacritty --config-file=$XDG_CONFIG_HOME/alacritty/alacritty_macOS.yml"
+# else
+#   alias alacritty="alacritty --config-file=$XDG_CONFIG_HOME/alacritty/alacritty_arch.yml"
+# fi
+#
 scripts=('tmux' 'neomutt' 'davmail' 'khal' 'vdirsyncer' 'statnot' 'hypr')
 
 for i in "${scripts[@]}"; do
   [[ -d $XDG_CONFIG_HOME/$i/scripts ]] && path=("$XDG_CONFIG_HOME/$i/scripts" "${path[@]}")
 done
+
+path+=$HOME/.cargo/bin
 
 export BROWSER='brave'
 

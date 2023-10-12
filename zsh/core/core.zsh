@@ -36,7 +36,6 @@ alias cp='command cp -vi'
 alias mv='command mv -vi'
 alias rm='command rm -vi'
 
-
 if uname | grep -q Darwin &> /dev/null; then
   alias ll='command gls -A --color=auto --group-directories-first'
   alias ls='command gls -A --color=auto --group-directories-first --time-style="+"'
@@ -72,6 +71,8 @@ cursor_mode
 
 # ESC-ESC to switch from ins to normal
 bindkey -rpM viins '^[^['
+
+# eval "$(_KHAL_COMPLETE=zsh_source khal)"
 
 # Put in command mode
 # zle-line-init() { zle -K vicmd; }
