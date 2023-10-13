@@ -15,4 +15,14 @@ auth            plain
 passwordeval    "pass show uu | sed -n '1p'"
 
 
+account         logica
+host            localhost
+port            1025
+tls             off
+from            inleiding.logica@uu.nl
+user            j.korbmacher@uu.nl
+auth            plain
+passwordeval    "pass show uu | sed -n '1p'"
+
+
 account default : uu
