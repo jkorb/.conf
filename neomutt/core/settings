@@ -31,7 +31,7 @@ named-mailboxes logica/trash      '+logica/Deleted Items'
 # named-mailboxes logica/junk       '+logica/Junk Email'
 
 named-mailboxes uu/inbox      '+uu/INBOX'          
-named-mailboxes uu/archive    '+uu/Archive' 
+named-mailboxes uu/archive    '+uu/Archive'
 named-mailboxes uu/sent       '+uu/Sent'    
 named-mailboxes uu/drafts     '+uu/Drafts' 
 named-mailboxes uu/trash      '+uu/Trash'
