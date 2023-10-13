@@ -1,22 +1,21 @@
 #!/bin/bash
 
 if [[ ! $HOME/.zshenv -ef $XDG_CONFIG_HOME/zsh/.zshenv ]]; then
-  rm "$HOME/.zshenv"
-  ln -s "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
+	rm "$HOME/.zshenv"
+	ln -s "$XDG_CONFIG_HOME/zsh/.zshenv" "$HOME/.zshenv"
 fi
 
 if [[ ! $HOME/.mbsyncrc -ef $XDG_CONFIG_HOME/isyncrc ]]; then
-  rm "$HOME/.mbsyncrc"
-  ln -s "$XDG_CONFIG_HOME/isyncrc" "$HOME/.mbsyncrc"
+	rm "$HOME/.mbsyncrc"
+	ln -s "$XDG_CONFIG_HOME/isyncrc" "$HOME/.mbsyncrc"
 fi
-
 
 $XDG_CONFIG_HOME/tmux/plugins/tpm/bin/update_plugins all
 
-if uname | grep -q Darwin &> /dev/null; then
-  brew upgrade
+if uname | grep -q Darwin &>/dev/null; then
+	brew upgrade
 fi
 
-if uname | grep -q Linux &> /dev/null; then
-  sudo pacman -Syu
+if uname | grep -q Linux &>/dev/null; then
+	yay -Syu
 fi
