@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
-csyncd &
+if uname | grep -q Darwin &> /dev/null; then
+  csyncd &
+fi
 
 khal interactive
