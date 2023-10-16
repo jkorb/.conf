@@ -19,6 +19,8 @@
 !neomutt
 !nnn
 !nvim
+nvim/lazy-lock.nvim
+nvim/lazyvim.json
 !rofi
 !systemd
 !tmux
