@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=iTunes
+Exec=env WINEPREFIX="/home/jkorbmacher/.wine" wine C:\\\\Program\\ Files\\\\iTunes\\\\iTunes.exe 
+Type=Application
+StartupNotify=true
+Icon=32EE_iTunes.0
+StartupWMClass=itunes.exe

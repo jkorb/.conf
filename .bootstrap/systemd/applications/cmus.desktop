@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=C* Music Player
+Type=Application
+Comment=A small, fast and powerful console music player
+Exec=/home/jkorbmacher/.config/cmus/scripts/cmus-launch.zsh %f
+MimeType=audio/mpep;audio/mp4;audio/vnd.wav;audio/ogg;audio/mid;audio/basic;audio/x-wav
+Icon=itunes
+Categories=ConsoleOnly;Audio;Player;
+GenericName=Music player
+Keywords=cmus;audio;player;

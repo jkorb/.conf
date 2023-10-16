@@ -1,0 +1,13 @@
+[MIME Cache]
+application/mbox=neomutt.desktop;
+audio/basic=cmus.desktop;
+audio/mid=cmus.desktop;
+audio/mp4=cmus.desktop;
+audio/mpep=cmus.desktop;
+audio/ogg=cmus.desktop;
+audio/vnd.wav=cmus.desktop;
+audio/x-wav=cmus.desktop;
+inode/directory=nnn.desktop;
+message/rfc822=neomutt.desktop;
+text/calendar=khal.desktop;
+x-scheme-handler/mailto=neomutt.desktop;

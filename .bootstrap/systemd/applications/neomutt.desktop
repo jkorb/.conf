@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=neomutt
+Comment=A command line mail reader
+Exec=alacritty -T neomutt -e neomutt %u
+Icon=/usr/share/neomutt/logo/neomutt.svg
+MimeType=application/mbox;message/rfc822;x-scheme-handler/mailto
+Categories=Office;Email;
+Keywords=File;Manager;Management;Explorer;Launcher

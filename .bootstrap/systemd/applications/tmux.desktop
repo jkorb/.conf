@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Tmux
+Exec=ta
+Icon=lxterminal
+Terminal=true
+Categories=System;TerminalEmulator;
+

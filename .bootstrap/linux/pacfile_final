@@ -1,0 +1,198 @@
+# Core system
+base
+base-devel
+binutils
+bison
+linux
+linux-firmware
+linux-headers
+
+# Other
+
+zoom
+hugo
+dropbox
+
+man-db
+
+
+# Sound
+
+sof-firmware # Do I need both?
+alsa-firmware
+alsa-utils
+bluez-alsa
+
+# File manager
+
+nnn
+gvfs
+gvfs-smb
+
+# Wine
+
+wine
+wine-gecko
+wine-mono
+
+# ??
+
+acpi_call
+
+#Terminal
+
+alacritty #term emulator
+tmux
+tmuxp
+urlscan
+zsh
+
+# Browser
+
+brave-bin
+browserpass
+browserpass-chromium
+
+# Notifications
+
+dunst
+
+# System
+
+brightnessctl
+btop
+efibootmgr
+fwupd
+tlp
+upower
+
+# Utils
+
+pdfgrep
+make
+rsync
+fd
+wget
+which
+ripgrep
+fzf
+bc
+autoconf
+automake
+
+
+# Git
+
+git
+git-credential-manager-core-bin
+
+# Pdf
+
+xournalpp
+zathura
+zathura-pdf-poppler
+zathura-ps
+
+
+# Editor
+
+ctags
+editorconfig-core-c
+hunspell
+hunspell-de
+hunspell-en_us
+hunspell-it
+hunspell-nl
+neovim
+neovim-remote
+pandoc-cli
+shellcheck
+libreoffice-fresh
+
+# Wayland, DM, etc.
+
+hyprland-git
+hyprpicker-git
+grimblast-git
+slurp
+smartmontools
+rofi-lbonn-wayland-git
+swaybg
+waybar-git
+wayland-protocols
+wl-clipboard
+wlogout
+xdg-desktop-portal-hyprland
+physlock
+polkit-gnome
+
+# PGP, etc.
+
+gnupg
+pam-gnupg
+pass
+
+# Networking
+
+networkmanager
+
+# Email & Office
+
+cyrus-sasl-xoauth2-git
+davmail
+msmtp
+mu
+neomutt
+w3m
+vdirsyncer
+
+# Fonts
+
+nerd-fonts-meta
+noto-fonts-emoji
+
+
+pacman-contrib
+papirus-icon-theme
+
+
+patch
+
+
+# Python
+
+python-gpgme
+python-isort
+python-libtmux
+python-matplotlib
+python-networkx
+python-nose
+python-openpyxl
+python-pip
+python-pytest
+python-recurring-ical-events
+
+
+# Latex
+
+biber
+texinfo
+texlive-basic
+texlive-bibtexextra
+texlive-binextra
+texlive-fontsextra
+texlive-formatsextra
+texlive-games
+texlive-humanities
+texlive-langeuropean
+texlive-latexextra
+texlive-mathscience
+texlive-music
+texlive-pictures
+texlive-pstricks
+texlive-publishers
+
+# Printing
+
+cups
+cups-pdf
