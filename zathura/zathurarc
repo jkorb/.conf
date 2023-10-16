@@ -27,48 +27,46 @@ set scroll-step 100
 set zoom-min 10
 set guioptions ""
 
-set font "Sauce Code Pro 12"
+set font "FiraCode Nerd Font 12"
 
-# Zathura Nord
-
-set notification-error-bg       "#2E3440"
-set notification-error-fg       "#BF616A"
-set notification-warning-bg     "#2E3440"
-set notification-warning-fg     "#D08770"
-set notification-bg             "#2E3440"
-set notification-fg             "#D8DEE9"
-
-set completion-bg               "#2E3440"
-set completion-fg               "#D8DEE9"
-set completion-group-bg         "#3B4252"
-set completion-group-fg         "#D8DEE9"
-set completion-highlight-bg     "#88C0D0"
-set completion-highlight-fg     "#3B4252"
-
-set index-bg                    "#2E3440"
-set index-fg                    "#8FBCBB"
-set index-active-bg             "#8FBCBB"
-set index-active-fg             "#2E3440"
-
-set inputbar-bg                 "#2E3440"
-set inputbar-fg                 "#E5E9F0"
-
-set statusbar-bg                "#2E3440"
-set statusbar-fg                "#E5E9F0"
-
-set highlight-color             "#D08770"
-set highlight-active-color      "#BF616A"
-
-set default-bg                  "#2E3440"
-set default-fg                  "#D8DEE9"
-set render-loading              "true"
-set render-loading-bg           "#2E3440"
-set render-loading-fg           "#434C5E"
-
-set recolor-lightcolor          "#2E3440"
-set recolor-darkcolor           "#ECEFF4"
-set recolor                     "false"
-
+# set notification-error-bg       "#2E3440"
+# set notification-error-fg       "#BF616A"
+# set notification-warning-bg     "#2E3440"
+# set notification-warning-fg     "#D08770"
+# set notification-bg             "#2E3440"
+# set notification-fg             "#D8DEE9"
+#
+# set completion-bg               "#2E3440"
+# set completion-fg               "#D8DEE9"
+# set completion-group-bg         "#3B4252"
+# set completion-group-fg         "#D8DEE9"
+# set completion-highlight-bg     "#88C0D0"
+# set completion-highlight-fg     "#3B4252"
+#
+# set index-bg                    "#2E3440"
+# set index-fg                    "#8FBCBB"
+# set index-active-bg             "#8FBCBB"
+# set index-active-fg             "#2E3440"
+#
+# set inputbar-bg                 "#2E3440"
+# set inputbar-fg                 "#E5E9F0"
+#
+# set statusbar-bg                "#2E3440"
+# set statusbar-fg                "#E5E9F0"
+#
+# set highlight-color             "#D08770"
+# set highlight-active-color      "#BF616A"
+#
+# set default-bg                  "#2E3440"
+# set default-fg                  "#D8DEE9"
+# set render-loading              "true"
+# set render-loading-bg           "#2E3440"
+# set render-loading-fg           "#434C5E"
+#
+# set recolor-lightcolor          "#2E3440"
+# set recolor-darkcolor           "#ECEFF4"
+# set recolor                     "false"
+#
 set selection-clipboard clipboard
 
 # # Zathura doom-one
@@ -78,40 +76,77 @@ set selection-clipboard clipboard
 # set notification-warning-fg     "#bbc2cf"
 # set notification-bg             "#282c34"
 # set notification-fg             "#bbc2cf"
-
+#
 # set completion-group-bg         "#21242b"
 # set completion-group-fg         "#bbc2cf"
 # set completion-bg               "#21252a"
 # set completion-fg               "#bbc2cf"
 # set completion-highlight-bg     "#2257A0"
 # set completion-highlight-fg     "#5B6268"
-
+#
 # # Define the color in index mode
 # set index-bg                    "#21252a"
 # set index-fg                    "#bbc2cf"
 # set index-active-bg             "#3E4556"
 # set index-active-fg             "#bbc2cf"
-
-# set inputbar-bg                 "#3E4556"
+#
+# set inputbar-bg                 "#000000"
 # set inputbar-fg                 "#bbc2cf"
-
+#
 # set statusbar-bg                "#21242b"
 # set statusbar-fg                "#bbc2cf"
-
+#
 # set highlight-color             "#2257A0" # hightlight match when search keyword(vim's /)
 # set highlight-active-color      "#51afef"
-
+#
 # set default-bg                  "#282c34"
 # set default-fg                  "#bbc2cf"
 # set render-loading              true
 # set render-loading-fg           "#bbc2cf"
 # set render-loading-bg           "#282c34"
 
-# # Recolor book content's color
+# Recolor book content's color
 # set recolor                     true
 # set recolor-lightcolor          "#282c34"
 # set recolor-darkcolor           "#bbc2cf"
-# set recolor-keephue             true      # keep original color
+set recolor-keephue             true      # keep original color
 
 set synctex                     true
 set synctex-editor-command      'nvr --remote-silent +%{line} %{input}'
+
+
+# include  ~/.local/share/nvim/lazy/tokyonight.nvim/extras/zathura/tokyonight_night.zathurarc
+
+set notification-error-bg "#f7768e"
+set notification-error-fg "#c0caf5"
+set notification-warning-bg "#e0af68"
+set notification-warning-fg "#414868"
+set notification-bg "#1a1b26"
+set notification-fg "#c0caf5"
+set completion-bg "#1a1b26"
+set completion-fg "#a9b1d6"
+set completion-group-bg "#1a1b26"
+set completion-group-fg "#a9b1d6"
+set completion-highlight-bg "#414868"
+set completion-highlight-fg "#c0caf5"
+set index-bg "#1a1b26"
+set index-fg "#c0caf5"
+set index-active-bg "#414868"
+set index-active-fg "#c0caf5"
+set inputbar-bg "#1a1b26"
+set inputbar-fg "#c0caf5"
+set statusbar-bg "#1a1b26"
+set statusbar-fg "#c0caf5"
+set highlight-color "#e0af68"
+set highlight-active-color "#9ece6a"
+set default-bg "#1a1b26"
+set default-fg "#c0caf5"
+set render-loading true
+set render-loading-fg "#1a1b26"
+set render-loading-bg "#c0caf5"
+#
+# Recolor mode settings
+# <C-r> to switch modes
+#
+set recolor-lightcolor "#1a1b26"
+set recolor-darkcolor "#c0caf5"
