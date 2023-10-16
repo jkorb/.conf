@@ -29,5 +29,7 @@
 !zsh
 
 !isyncrc
+!pam-gnupg
+
 !README.md
 !.gitignore
