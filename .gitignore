@@ -3,14 +3,15 @@
 !.bootstrap
 
 !alacritty
+!btop
 !cmus
 !davmail
+!despell
 !fd
 !hypr
 !git
 !gtk-3.0
 !gtk-4.0
-!gtklock
 !khal
 !latexmk
 !msmtp

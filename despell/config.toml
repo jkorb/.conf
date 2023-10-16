@@ -1,0 +1,9 @@
+[icons.nnn]
+nerdfont = "󰡘"
+color = "blue"
+emoji = "♞"
+
+[default]
+nerdfont = ""
+color = "red"
+emoji = "⚡"
