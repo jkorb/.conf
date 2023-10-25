@@ -11,6 +11,10 @@ error_message = "<span color='#e06c75'>Error</span>"
 notification_symbol = "\udb83\udd5a"
 fronwie = '\U0001F622'
 
+def colorstr(str : str, color: str):
+    coloredstr = f"<span color='{color}'>{str}</span>"
+    return(coloredstr)
+
 def call_process(cmd:list, out:dict):
 
     p = subprocess.run(cmd, stdout=subprocess.PIPE, stderr = subprocess.PIPE,text=True)
@@ -44,7 +48,7 @@ def main(**kwargs):
     try:
         response = requests.get(url, auth=auth)
     except:
-        out['text'] = f"<span color='#e06c75'>{github}</span> ?"
+        out['text'] = github + "?"
         out['tooltip'] = f"{error_message}: couldn't get from {url}"
         print(json.dumps(out, indent=None, separators=(",",": ")))
         exit(0)
@@ -53,10 +57,12 @@ def main(**kwargs):
 
 
     if len(notifications) == 0:
-        out['text'] = f"{github} {len(notifications)}"
+        # out['text'] = f"{github} {len(notifications)}"
+        out['text'] = colorstr(github, "#A4A4A4" )
         out['tooltip'] = f"{fronwie} No unread notifications."
     else:
-        out['text'] = f"<span color='#c678dd'>{github}</span> {len(notifications)}"
+        out['text'] = github
+        # out['text'] = f"<span color='#c678dd'>{github}</span> {len(notifications)}"
         for n in notifications:
             repo = n['repository']['full_name']
             title = n['subject']['title']

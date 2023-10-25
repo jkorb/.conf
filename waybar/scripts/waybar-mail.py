@@ -8,11 +8,14 @@ import os
 import json
 import html
 
-# mail_icon = "\u2709 "
 mail_icon = "\ueb1c "
 smiley = "\U0001F60E"
-mailbox_full = "\ueb1c"
-mailbox_empty = "\ueb1b"
+mailbox_full = "\udb80\uddee"
+mailbox_empty = "\udb80\uddef"
+
+def colorstr(str : str, color: str):
+    coloredstr = f"<span color='{color}'>{str}</span>"
+    return(coloredstr)
 
 def format_time(timestamp):
 
@@ -64,9 +67,9 @@ if __name__ == "__main__":
             unread_mail += 1
 
     if unread_mail == 0:
-        output['text'] = mailbox_empty + " " + str(unread_mail)
+        output['text'] = colorstr(mailbox_empty, "#A4A4A4" )
         output['tooltip']= smiley + " No unread emails."
     else:
-        output['text'] = "<span color='#f7768e'>\ueb1c</span> " + str(unread_mail)
+        output['text'] = mailbox_full 
 
     print(json.dumps(output, indent=None, separators=(",",": ")))

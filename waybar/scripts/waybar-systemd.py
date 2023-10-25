@@ -3,12 +3,11 @@
 import subprocess
 import json
 
-systemd_logo = "\u25CF\u200A\u25C0"
+systemd_logo = "\udb84\uddef"
 smiley = "\U0001F60E"
 
-Green  = "#98c379"
-Red    = "#e06c75"
-Yellow = "#d19a66"
+Green  = "#FFFFFF"
+Red    = "#cf6679"
 
 system_state_cmd = [ 'systemctl', 'show', '--property=SystemState' ]
 failed_units_cmd = [ 'systemctl', 'list-units', '--failed' ]
@@ -16,6 +15,7 @@ timer_state_cmd = ['systemctl', '--user', 'show', '', '--property=ActiveState' ]
 timers_list = ['isync.timer', 'vdirsyncer.timer']
 
 def colorstr(str : str, color: str):
+    # styledstr = str
     styledstr = f"<span color='{color}'>{str}</span>"
     return(styledstr)
 
@@ -95,7 +95,7 @@ def main(**kwargs):
     if ((system_state != "running" and system_state != "degraded") or
             (system_state__user != "running" and system_state__user != "degraded") or
             (timers_state != "running" and timers_state != "degraded")):
-        out['text'] += colorstr(systemd_logo, Yellow)
+        out['text'] += colorstr(systemd_logo, Red)
         out['tooltip'] += "System in unexpected state..."
 
     return(json.dumps(out, indent=None, separators=(",",": ")))

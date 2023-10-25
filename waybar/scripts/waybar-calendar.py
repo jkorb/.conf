@@ -7,7 +7,7 @@ import sys
 
 logo_blank    = "\udb80\udcee"
 logo_event    = "\udb80\udced"
-logo_reminder = "\udb83\udd59"
+logo_reminder = "\udb80\udc20"
 clock_item    = "\U000023F0"
 continue_logo = "\U000021AA"
 calendar_item = "\U0001F4C5"
@@ -106,7 +106,7 @@ def main(**kwargs):
 
 
         if reminder_flag > 0:
-           out['text'] = " ".join([out['text'], f"<span color='#e06c75'>{logo_reminder}</span>"])
+           out['text'] = " ".join([out['text'], f"<span color='#cf6679'>{logo_reminder}</span>"])
 
     # This is not really pythonic, but its PARAMOUNT, that this script returns a
     # 0 exit code, unless thing go CATASTROPHICALLY wrong.

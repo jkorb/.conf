@@ -1,107 +1,119 @@
-@define-color black     #15161e;
-@define-color red       #f7768e;
-@define-color green     #9ece6a;
-@define-color yellow    #e0af68;
-@define-color blue      #7aa2f7;
-@define-color magenta   #bb9af7;
-@define-color cyan      #7dcfff;
-@define-color white     #a9b1d6;
+@define-color  primary #BB86FC;
+@define-color  primary-variant #3700B3;
+@define-color  secondary #03DAC6;
 
-@define-color brblack   #414868;
-@define-color brred     #f7768e;
-@define-color brgreen   #9ece6a;
-@define-color bryellow  #e0af68;
-@define-color brblue    #7aa2f7;
-@define-color brmagenta #bb9af7;
-@define-color brcyan    #7dcfff;
-@define-color brwhite   #c0caf5;
+@define-color  background #121212;
+@define-color  lifted #1D1D1D;
 
-* {
-  border: none;
-  border-radius: 0;
-  font-family: "FiraCode Nerd Font";
-  font-size: 14px;
-  min-height: 0;
-}
+
+@define-color  surface #121212;
+@define-color  error #CF6679;
+
+@define-color  on-primary #000000;
+@define-color  on-secondary #000000;
+@define-color  on-background #E1E1E1;
+@define-color  on-surface #E1E1E1;
+@define-color  on-error #000000;
+
+@define-color  off-colored #A4A4A4;
+@define-color  disabled #797979;
+
 window#waybar {
-  border: none;
-  border-radius: 0;
-  font-weight: 400;
-  font-size: 14px;
-  min-height: 0;
-  background: @black;
-  /* background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, .25), transparent); */
+  min-height  : 0;
+
+  font-family : "NotoSans Nerd Font";
+  font-size   : 18px;
+  font-weight : 400;
+
+  background  : @background;
+  color       : @on-background;
 }
-window#waybar.hidden {
-    opacity: 0.2;
-}
-.modules-right {
-  /* background: transparent; */
-  /* padding: 0px; */
-  /* margin-right: 10px; */
-}
+
 .modules-left {
-  margin-right: 10px;
+  border        : none;
+  border-radius : 0;
+  margin-left   : 10px;
+  margin-right  : 10px;
 }
-#workspaces button {
-  border-top: 2px solid white;
-  color: #a9b1d6;
-  padding: 4px;
-  margin-right: 6px;
+
+.modules-right {
+  margin-left  : 10px;
+  background   : @background;
+  margin-right : 10px;
 }
-#workspaces button:hover {
-    background: rgba(255, 255, 255, 0.35);
-}
-#workspaces button.active {
-    border-top: 2px solid transparent;
-    color: @black;
-    font-weight: bold;
-    background: @blue;
-}
-#workspaces button.visible {
-    border-top: 2px solid transparent;
-    color: @black;
-    background: @blue;
-}
-#workspaces button.empty {
-    border-top: 2px solid transparent;
-}
+
 #custom-arch {
-  font-size: 18pt;
-  color: @blue;
-  padding: 0px;
-  margin-left: 10px;
-  margin-right: 20px;
+  font-size    : 18pt;
+  color        : @off-colored;
+  padding      : 0px;
+  margin-left  : 10px;
+  margin-right : 20px;
 }
-#idle_inhibitor, #backlight, #battery, #bluetooth, #custom-calendar,
-#custom-mail, #custom-pacman, #custom-seperator, #custom-systemd, #custom-github, #network,
-#pulseaudio, #tray {
-  color: @white;
+
+#workspaces button {
+  border-radius : 0;
+  border-top    : 2px solid @on-background;
+  color         : @on-background;
+  padding       : 4px;
+  margin-right  : 6px;
 }
-#pulseaudio {
-    transition: background linear .25s;
+
+#workspaces button.active {
+  border-top  : 2px solid transparent;
+  color       : @background;
+  background  : @primary;
+  font-weight : bold;
 }
-#custom-left-bracket, #custom-right-bracket {
-  color: @white;
+
+#workspaces button.visible {
+  border-top : 2px solid transparent;
+  color      : @background;
+  background : @primary;
 }
-#network, #idle_inhibitor, #backlight, #pulseaudio, #battery, #custom-mail,
-#custom-pacman, #custom-github, #custom-mail, #custom-github, #custom-pacman,
-#battery, #backlight, #pulseaudio,  #bluetooth, #custom-separator, #tray,
-#custom-calendar {
-  padding: 5px;
+
+#workspaces button.empty {
+  border-top: 2px solid transparent;
 }
-#battery.critical {
-    color: @red;
+
+#idle_inhibitor, #backlight, #battery, #bluetooth,
+#custom-calendar, #custom-mail, #custom-systemd, #custom-github, #network,
+#pulseaudio, #tray, #language {
+  color        : @on-surface;
+  margin-right : 15px;
 }
-#network.disconnected {
-    color: @red;
+
+#tray {
+  margin-left: 0px;
 }
-#idle_inhibitor.activated  {
-  color: @yellow;
-  padding: 5px;
+
+#language {
+  color        : @on-surface;
+  margin-right : 5px;
 }
+
+#pulseaudio.bluetooth, #bluetooth.connected {
+  color: @secondary;
+}
+
 #window {
- /* min-width: 50em; */
- color: @yellow;
- padding: 5px;
+  margin-left : 20px;
+  color       : @off-colored;
+  font-weight : bold;
+}
+
+#bluetooth.off, #bluetooth.disabled, #network.disconnected,
+#idle_inhibitor.deactivated, #pulseaudio.muted {
+  color: @disabled;
+}
+
+#battery.critical {
+  background: @error;
+}
+
+#tray > .passive {
+  color: @disabled;
+}
+
+#tray > .needs-attention {
+  color: @error;
 }
