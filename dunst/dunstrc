@@ -1,58 +1,65 @@
+# /* vim: set filetype=conf : */
+
 [global]
-    follow = mouse
-    indicate_hidden = yes
+    follow                       = mouse
+    indicate_hidden              = yes
 
-    offset = 10x10
-    notification_height = 4
+    offset                       = 10x10
 
-    separator_height = 2
+    separator_height             = 2
 
-    padding = 16 
-    text_icon_padding = 0
-    frame_width = 2
+    padding                      = 16
+    text_icon_padding            = 0
+    frame_width                  = 1
 
-    # frame_color = "#7aa2f7"
-    separator_color = frame
+    separator_color              = frame
 
-    sort = yes
-    idle_threshold = 120
-    font = "SauceCodeProNerdFontMono" 12
-    line_height = 0
-    markup = full
-    alignment = left
-    vertical_alignment = center
-    show_age_threshold = 60
-    word_wrap = yes
-    stack_duplicates = true
-    hide_duplicate_count = false
+    sort                         = yes
 
-    show_indicators = yes
+    idle_threshold               = 120
+    font                         = "NotoSans Nerd Font" 18
 
-    min_icon_size = 0
-    max_icon_size = 64
+    line_height                  = 0
+    markup                       = full
 
-    icon_path = /usr/share/icons/Papirus-Dark/16x16/status/:/usr/share/icons/Papirus-Dark/16x16/devices/:/usr/share/icons/Papirus-Dark/16x16/actions/:/usr/share/icons/Papirus-Dark/16x16/animations/:/usr/share/icons/Papirus-Dark/16x16/apps/:/usr/share/icons/Papirus-Dark/16x16/categories/:/usr/share/icons/Papirus-Dark/16x16/emblems/:/usr/share/icons/Papirus-Dark/16x16/emotes/:/usr/share/icons/Papirus-Dark/16x16/devices/mimetypes:/usr/share/icons/Papirus-Dark/16x16/panel/:/usr/share/icons/Papirus-Dark/16x16/places/
+    alignment                    = left
 
-    dmenu = /usr/bin/rofi -p dunst:
-    browser = /usr/bin/brave --new-tab
+    vertical_alignment           = top
 
-    title = Dunst
-    class = Dunst
+    show_age_threshold           = 60
 
-    corner_radius = 10
-    timeout = 5
+    word_wrap                    = yes
+    stack_duplicates             = true
+    hide_duplicate_count         = false
+
+    show_indicators              = yes
+
+    min_icon_size                = 0
+    max_icon_size                = 64
+
+    enable_recursive_icon_lookup = true
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/legacy/
+
+    dmenu                        = /usr/bin/rofi -p dunst:
+    browser                      = /usr/bin/brave --new-tab
+
+    title                        = Dunst
+    class                        = Dunst
+
+    # corner_radius                = 12
+    timeout                      = 15
 
 [urgency_low]
-    background = "#16161e"
-    foreground = "#c0caf5"
-    frame_color = "#c0caf5"
+    background                   = "#121212"
+    foreground                   = "#BB86FC"
+    frame_color                  = "#121212"
 
 [urgency_normal]
-    background = "#1a1b26"
-    foreground = "#c0caf5"
-    frame_color = "#c0caf5"
+    background                   = "#121212"
+    foreground                   = "#BB86FC"
+    frame_color                  = "#121212"
 
 [urgency_critical]
-    background = "#292e42"
-    foreground = "#db4b4b"
-    frame_color = "#db4b4b"
+    background                   = "#CF6679"
+    foreground                   = "#000000"
+    frame_color                  = "#121212"
