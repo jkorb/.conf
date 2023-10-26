@@ -50,7 +50,7 @@ alias grep="grep --color=auto"
 
 # Custom
 
-alias nots='notifications'
+alias N='sudo nnn'
 
 # Arch
 
