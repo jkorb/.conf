@@ -5,6 +5,8 @@ export XDG_CACHE_DIR="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
+
 export BASH_ENV="$HOME/.bashrc"
 
 export MAILDIR="$HOME/.mail"

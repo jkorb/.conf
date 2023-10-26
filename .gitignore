@@ -11,6 +11,7 @@
 !fd
 !hypr
 !git
+!gnupg
 !gtk-3.0
 !gtk-4.0
 !khal
@@ -32,6 +33,8 @@ nvim/lazyvim.json
 
 !isyncrc
 !pam-gnupg
+!gtkrc-2.0
 
 !README.md
 !.gitignore
+
